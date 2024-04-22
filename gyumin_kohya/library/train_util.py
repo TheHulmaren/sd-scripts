@@ -67,10 +67,10 @@ import imagesize
 import cv2
 import safetensors.torch
 from .lpw_stable_diffusion import StableDiffusionLongPromptWeightingPipeline
-import model_util
-import huggingface_util
-import sai_model_spec
-import deepspeed_utils
+from . import model_util
+from . import huggingface_util
+from . import sai_model_spec
+from . import deepspeed_utils
 from .utils import setup_logging
 
 setup_logging()
