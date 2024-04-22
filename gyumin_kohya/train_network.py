@@ -23,7 +23,7 @@ from .library import deepspeed_utils, model_util
 from .library import train_util
 from .library.train_util import DreamBoothDataset
 from .library import config_util
-from library.config_util import (
+from .library.config_util import (
     ConfigSanitizer,
     BlueprintGenerator,
 )
