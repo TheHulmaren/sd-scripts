@@ -33,7 +33,7 @@ import toml
 from tqdm import tqdm
 
 import torch
-from library.device_utils import init_ipex, clean_memory_on_device
+from .device_utils import init_ipex, clean_memory_on_device
 
 init_ipex()
 
@@ -58,20 +58,20 @@ from diffusers import (
     KDPM2AncestralDiscreteScheduler,
     AutoencoderKL,
 )
-from library import custom_train_functions
-from library.original_unet import UNet2DConditionModel
+from . import custom_train_functions
+from .original_unet import UNet2DConditionModel
 from huggingface_hub import hf_hub_download
 import numpy as np
 from PIL import Image
 import imagesize
 import cv2
 import safetensors.torch
-from library.lpw_stable_diffusion import StableDiffusionLongPromptWeightingPipeline
-import library.model_util as model_util
-import library.huggingface_util as huggingface_util
-import library.sai_model_spec as sai_model_spec
-import library.deepspeed_utils as deepspeed_utils
-from library.utils import setup_logging
+from .lpw_stable_diffusion import StableDiffusionLongPromptWeightingPipeline
+import model_util
+import huggingface_util
+import sai_model_spec
+import deepspeed_utils
+from .utils import setup_logging
 
 setup_logging()
 import logging
@@ -79,7 +79,7 @@ import logging
 logger = logging.getLogger(__name__)
 # from library.attention_processors import FlashAttnProcessor
 # from library.hypernetwork import replace_attentions_for_hypernetwork
-from library.original_unet import UNet2DConditionModel
+from .original_unet import UNet2DConditionModel
 
 # Tokenizer: checkpointから読み込むのではなくあらかじめ提供されているものを使う
 TOKENIZER_PATH = "openai/clip-vit-large-patch14"
